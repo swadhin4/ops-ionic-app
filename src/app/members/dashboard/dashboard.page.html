@@ -1,0 +1,89 @@
+
+<link href="assets/css/bootstrap.min.css" rel="stylesheet">
+<link href="assets/dist/font-awesome-4.4.0/css/font-awesome.min.css"rel="stylesheet">
+<link href="assets/css/AdminLTE.min.css" rel="stylesheet">
+<link href="assets/css/bootstrap-material-design.min.css"	rel="stylesheet">
+<link href="assets/css/MaterialAdminLTE.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+<link href="assets/css/materialize.min.css" rel="stylesheet">
+<link href="assets/css/style.css" rel="stylesheet">
+<ion-header>
+   <ion-toolbar color="primary">
+      <ion-title class="titleHeader">Dashboard</ion-title>
+      <ion-buttons slot="end" >
+         <ion-button (click)="logout()">
+    		<i class="fa fa-sign-out fa-2x" aria-hidden="true"></i>
+        </ion-button>
+      </ion-buttons>
+   </ion-toolbar>
+</ion-header>
+<ion-content>
+	<div class="row">
+      <div class="col s6 m6 l6 xl3">
+         <div class="card gradient-45deg-light-blue-cyan gradient-shadow min-height-100 white-text animate fadeLeft">
+          <a href="javascript:void(0)" (click)="sitePage()">  <div class="padding-4 center" >
+                  <i class="fa fa-sitemap  background-round mt-5 " aria-hidden="true"></i>
+                  <p>150</p>
+                  <p>Sites</p>
+            </div>
+            </a>
+         </div>
+      </div>
+      <div class="col s6 m6 l6 xl3">
+         <div class="card gradient-45deg-red-pink gradient-shadow min-height-100 white-text animate fadeLeft">
+            	<div class="padding-4 center">
+                  <i class="fa fa-user  background-round mt-5" aria-hidden="true"></i>
+                  <p>50</p>
+                  <p>Service Orgs.</p>
+               </div>
+            </div>
+         </div>
+      <div class="col s6 m6 l6 xl3">
+         <div class="card gradient-45deg-amber-amber gradient-shadow min-height-100 white-text animate fadeRight">
+            <div class="padding-4 center">
+                  <i class="fa fa-building  background-round mt-5" aria-hidden="true"></i>
+                    <p>350</p>
+                  <p>Clients</p>
+            </div>
+         </div>
+      </div>
+      <div class="col s6 m6 l6 xl3">
+         <div class="card gradient-45deg-green-teal gradient-shadow min-height-100 white-text animate fadeRight">
+            <div class="padding-4 center">
+                  <i class="fa fa-users background-round mt-5"></i>
+                   <p>3350</p>
+                  <p>Visitors</p>
+            </div>
+         </div>
+      </div>
+   </div>
+      <div class="row">
+      	<div class="col-md-4">
+          <!-- Info Boxes Style 2 -->
+          <div class="info-box bg-yellow">
+            <span class="info-box-icon"><i class="fa fa-ticket" aria-hidden="true"></i></span>
+          	<a href="javascript:void(0)" (click)="incidentPage()">  <div class="info-box-content">
+              <span class="info-box-text">Company Incidents</span>
+              <span class="info-box-number">5,200</span>
+              <span class="progress-description">
+                    Created by company
+                  </span>
+            </div>
+            </a>
+          </div>
+          <!-- /.info-box -->
+          <div class="info-box bg-green">
+            <span class="info-box-icon"><i class="fa fa-ticket" aria-hidden="true"></i></span>
+
+            <div class="info-box-content">
+              <span class="info-box-text">RSP Incidents</span>
+              <span class="info-box-number">92,050</span>
+              <span class="progress-description">
+                      Created by Registered Service Provider
+                  </span>
+            </div>
+          </div>
+        </div>
+      </div>
+</ion-content>

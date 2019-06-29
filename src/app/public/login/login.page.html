@@ -1,0 +1,44 @@
+
+<link href="assets/css/style.css" rel="stylesheet">
+<ion-header> <ion-toolbar> <img
+	src="assets/logo.png" alt="Logo" id="logo" class="center"> <img
+	src="assets/sigma.png" class="center" style="width:65%"> </ion-toolbar> </ion-header>
+
+<ion-content>
+<div class="col s12">
+	<div class="container" style="width:100%;margin-top: 40px;">
+		<div id="login-page" class="row">
+			<p class="login-box-msg center" style="text-align: center">Sign in to start your session</p>
+			<div class="col s12 m6 l4   border-radius-8  bg-opacity-8">
+				<form #form="ngForm" (ngSubmit)="onSubmit(form)">
+					<ion-grid> <ion-row color="primary"
+						justify-content-center> <ion-col align-self-center
+						size-md="6" size-lg="5" size-xs="12">
+					
+					<div >
+						<ion-item> <ion-input name="email" type="email"
+							placeholder="Username" ngModel required></ion-input> </ion-item>
+						<ion-item> <ion-input name="password" type="password"
+							placeholder="Password" ngModel required></ion-input> </ion-item>
+						<ion-item> <ion-label>Login Type</ion-label> <ion-select name="type"
+							placeholder="Select One" ngModel required> <ion-select-option
+							value="CUSTOMER">(R) Customer</ion-select-option> <ion-select-option
+							value="RSP">(R) Service Provider</ion-select-option> <ion-select-option
+							value="ESP">(E) Service Provider</ion-select-option> </ion-select> </ion-item>
+					</div>
+						
+					</ion-col> </ion-row> </ion-grid>
+					<div class="row">
+						<div class="col s12 m12 l12 ml-2 mt-1"></div>
+					</div>
+					<div class="row">
+						<ion-button size="large" type="submit" [disabled]="form.invalid"
+							expand="block">Login</ion-button>
+					</div>
+
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+</ion-content>
