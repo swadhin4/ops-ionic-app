@@ -1,5 +1,6 @@
 
-export const BASE_URL='http://localhost:8484/opsapi';
+export const REMOTE_IP='18.188.51.234';
+export const BASE_URL='http://'+REMOTE_IP+':8484/opsapi';
 export const AUTH_API='/auth/v1/user/oauth/token';
 export const INCIDENT_LIST_API='/incident/v1/list/extsp';
 export const SITE_LIST_API='/site/v1/list';
