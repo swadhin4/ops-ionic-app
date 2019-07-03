@@ -20,11 +20,17 @@ export class SitePage implements OnInit {
 			   console.log(res);
 			   this.siteService.siteList(res.accessToken,res.username).then((res)=>{
 			        this.responseData=res;
-				  	console.log("Response : ", this.responseData);
-				  	if(this.responseData.statusCode==200){
-				  		this.siteList=this.responseData.object;
-				  	}
-				  	this.toastService.showSuccessToast("Site list displayed");
+					if(this.responseData==null){
+							this.toastService.showErrorToast("No Sites available")	
+						}else{
+							console.log("Response : ", this.responseData);
+							if(this.responseData.statusCode==200){
+								this.siteList=this.responseData.object;
+								this.toastService.showSuccessToast("Site list displayed");
+							}
+						}
+				  
+				  	
 			    }, (err)=>{
 					   console.log("Error : ", err)
 				  		this.toastService.showErrorToast("Unable to get site list")

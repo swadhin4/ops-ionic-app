@@ -1,9 +1,28 @@
+<link href="assets/dist/font-awesome-4.4.0/css/font-awesome.min.css"rel="stylesheet">
+<link href="assets/css/materialize.min.css" rel="stylesheet">
+<link href="assets/css/style.css" rel="stylesheet">
+<style>
+
+</style>
 <ion-header>
-  <ion-toolbar>
-    <ion-title>asset</ion-title>
-  </ion-toolbar>
+   <ion-toolbar color="primary">
+   		<ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+      <ion-title class="titleHeader">Asset List</ion-title>
+   </ion-toolbar>
 </ion-header>
-
-<ion-content>
-
+<ion-content >
+ <div class="row">
+      <div class="col s12 m12 l6">
+         <ul class="collection mb-0" style="border: 0px solid #e0e0e0;">
+               <li class="collection-item avatar" *ngFor="let item of assetList">
+                  <img src="assets/img/ticket.png" alt="" class="circle">
+                  <p class="font-weight-600">{{item.assetName}}</p>
+                  <p class="medium-small">{{item.categoryName}}</p>
+                  <a href="javacript:void(0);" class="secondary-content"><i class="material-icons pull-right" style="    margin-right: -182px;">info_border</i></a>
+               </li>
+            </ul>
+      </div>
+   </div>
 </ion-content>

@@ -15,6 +15,7 @@ export class DashboardPage implements OnInit {
 		  private router: Router) { }
 
   ngOnInit() {
+    
   }
   	logout() {
   		 this.authenticationService.logout();
@@ -39,5 +40,24 @@ export class DashboardPage implements OnInit {
                this.router.navigate(['login']);
              }
            });
-  	}
+    }
+    
+    assetPage(){
+      this.authenticationService.authenticationState.subscribe(state => {
+            if (state) {
+              this.router.navigate(['members/asset']);
+            } else {
+              this.router.navigate(['login']);
+            }
+          });
+     }
+     serviceProviderPage(){
+      this.authenticationService.authenticationState.subscribe(state => {
+            if (state) {
+              this.router.navigate(['members/serviceprovider']);
+            } else {
+              this.router.navigate(['login']);
+            }
+          });
+     }
 }

@@ -9,14 +9,14 @@ import * as Constants from './../constants/api.service';
 @Injectable({
   providedIn: 'root'
 })
-export class IncidentService {
+export class AssetService {
 
   constructor(private http: Http) { }
   
-   incidentList(accessToken,username){
+   assetList(accessToken,username){
 	   return new Promise((resolve, reject) => {
 		      let headers = new Headers();
-	      this.http.get(Constants.BASE_URL+Constants.INCIDENT_LIST_API + "?access_token="+accessToken+"&user="+username)
+	      this.http.get(Constants.BASE_URL+Constants.ASSET_LIST_API + "?access_token="+accessToken+"&user="+username)
 	        .subscribe(res => {
 	        	 resolve(res.json());
 	        	 let responseObj =  res.json();

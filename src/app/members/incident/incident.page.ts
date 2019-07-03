@@ -20,10 +20,14 @@ export class IncidentPage implements OnInit {
 				   console.log(res);
 				   this.incidentService.incidentList(res.accessToken,res.username).then((res)=>{
 				        this.responseData=res;
-					  	console.log("Response : ", this.responseData);
-					  	if(this.responseData.statusCode==200){
-					  		this.incidentList=this.responseData.object;
-					  	}
+						if(this.responseData==null){
+							this.toastService.showErrorToast("No incidents available")	
+						}else{
+							console.log("Response : ", this.responseData);
+							if(this.responseData.statusCode==200){
+								this.incidentList=this.responseData.object;
+							}
+						}
 					  	//this.toastService.showSuccessToast("Incident list displayed");
 				    }, (err)=>{
 						   console.log("Error : ", err)

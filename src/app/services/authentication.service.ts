@@ -5,9 +5,10 @@ import { BehaviorSubject } from 'rxjs';
 import { Observable, from } from 'rxjs';
 import { Http, Response } from '@angular/http';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import * as Constants from './../constants/api.service';
 const TOKEN_KEY = 'auth-token';
 const LOGGEDIN_USER = 'null';
-let authURL = "http://localhost:8484/ops/api/auth/v1/user/oauth/token"
+
 @Injectable({
   providedIn: 'root'
 })
@@ -45,7 +46,7 @@ export class AuthenticationService {
   login(credentials, type, deviceId){
 	  return new Promise((resolve, reject) => {
 	      let headers = new Headers();
-	      this.http.get(authURL + "?userdetails="+credentials+"&loginType="+type+"&loginDevice="+deviceId)
+	      this.http.get(Constants.BASE_URL+Constants.AUTH_API + "?userdetails="+credentials+"&loginType="+type+"&loginDevice="+deviceId)
 	        .subscribe(res => {
 	        	 resolve(res.json());
 	        	 let responseObj =  res.json();
