@@ -1,0 +1,78 @@
+
+<link href="assets/css/bootstrap.min.css" rel="stylesheet">
+<link href="assets/dist/font-awesome-4.4.0/css/font-awesome.min.css"rel="stylesheet">
+<link href="assets/css/AdminLTE.min.css" rel="stylesheet">
+<link href="assets/css/bootstrap-material-design.min.css"	rel="stylesheet">
+<link href="assets/css/MaterialAdminLTE.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+<link href="assets/css/materialize.min.css" rel="stylesheet">
+<link href="assets/css/style.css" rel="stylesheet">
+
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+   <ion-back-button></ion-back-button>
+
+ </ion-buttons>
+ 
+   <ion-title class="titleHeader">Site Operations</ion-title>
+    <ion-buttons slot="end">
+     
+     </ion-buttons>
+</ion-toolbar>
+</ion-header>
+<ion-content>
+<div class="box">
+  <div class="box-header" style="background-color: #06544d;">
+    <h3 class="box-title" style="color: #f3eeee;font-size: 17px;">Sales timing</h3>
+  </div>
+  <!-- /.box-header -->
+  <div class="box-body no-padding">
+    <table class="table table-condensed">
+      <tbody><tr>
+      
+        <th>Days</th>
+        <th>From</th>
+        <th >To</th>
+      </tr>
+      <tr *ngFor="let item of salesTimeList">
+      
+        <td>{{item.days}}</td>
+        <td>{{item.from}}</td>
+        <td>{{item.to}}</td>
+      </tr>
+     
+     
+    </tbody></table>
+  </div>
+  <!-- /.box-body -->
+</div>
+<div class="box">
+  <div class="box-header" style="background-color: #06544d;">
+    <h3 class="box-title" style="color: #f3eeee;font-size: 17px;">Delivery timing</h3>
+  </div>
+  <!-- /.box-header -->
+  <div class="box-body no-padding">
+    <table class="table table-condensed">
+      <tbody><tr>
+       
+        <th>Days</th>
+        <th>From</th>
+        <th >To</th>
+      </tr>
+      <tr *ngFor="let item of deliveryTimeList">
+      
+        <td>{{item.days}}</td>
+        <td>{{item.from}}</td>
+        <td>{{item.to}}</td>
+      </tr>
+     
+     
+    </tbody></table>
+  </div>
+
+</div>
+
+ 
+</ion-content>

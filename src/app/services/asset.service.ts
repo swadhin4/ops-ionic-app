@@ -13,10 +13,10 @@ export class AssetService {
 
   constructor(private http: Http) { }
   
-   assetList(accessToken,username){
+   assetList(accessToken,username, assetType){
 	   return new Promise((resolve, reject) => {
 		      let headers = new Headers();
-	      this.http.get(Constants.BASE_URL+Constants.ASSET_LIST_API + "?access_token="+accessToken+"&user="+username)
+	      this.http.get(Constants.BASE_URL+Constants.ASSET_LIST_API + "/" + assetType + "?access_token="+accessToken+"&user="+username)
 	        .subscribe(res => {
 	        	 resolve(res.json());
 	        	 let responseObj =  res.json();
@@ -25,5 +25,20 @@ export class AssetService {
 	          reject(err);
 	        });
 	    });
+   }
+
+   assetDetail(accessToken,username,assetId){
+	return new Promise((resolve, reject) => {
+		let headers = new Headers();
+		headers.append('Access-Control-Allow-Methods', 'POST, GET, OPTIONS, DELETE, PUT');
+	   this.http.get(Constants.BASE_URL+Constants.SELECTED_ASSET_API+"/"+assetId + "?access_token="+accessToken+"&user="+username)
+		 .subscribe(res => {
+			  resolve(res.json());
+			  let responseObj =  res.json();
+			  console.log(responseObj);
+		 }, (err) => {
+		   reject(err);
+		 });
+	 });
    }
 }

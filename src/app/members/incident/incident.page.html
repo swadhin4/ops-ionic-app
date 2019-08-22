@@ -9,7 +9,14 @@
    		<ion-buttons slot="start">
       <ion-back-button></ion-back-button>
     </ion-buttons>
-      <ion-title class="titleHeader">Incident List</ion-title>
+      <ion-title class="titleHeader">
+            Incident List
+            <p style="font-size:10px">{{spType}}</p>
+      </ion-title>
+          
+            <ion-buttons  slot="end">
+                  <ion-icon name="search"></ion-icon>
+              </ion-buttons>
    </ion-toolbar>
 </ion-header>
 <ion-content >
@@ -21,9 +28,30 @@
                   <p class="font-weight-600">{{item.ticketNumber}}</p>
                  
                   <p class="medium-small">{{item.ticketTitle}}</p>
-                  <a href="javacript:void(0);" class="secondary-content"><i class="material-icons pull-right" style="    margin-right: -182px;">info_border</i></a>
+                  <a href="javacript:void(0);" class="secondary-content" (click)="getIncidentDetail(item.ticketNumber, item.asstSpType)">
+                     <i class="material-icons pull-right" style="margin-right: -182px;">info_border</i></a>
                </li>
             </ul>
       </div>
    </div>
 </ion-content>
+<ion-footer>
+   <ion-toolbar>
+      <ion-tabs>
+          <ion-tab-bar slot="bottom">
+            <ion-tab-button (click) = "getIncidentList('EXTSP')">
+              <ion-icon name="calendar"></ion-icon>
+              <ion-label >Assigned To ESP</ion-label>
+              <ion-badge>{{extCount}}</ion-badge>
+            </ion-tab-button>
+        
+            <ion-tab-button (click) = "getIncidentList('RSP')">
+               <ion-icon name="calendar"></ion-icon>
+               <ion-label >Assigned To RSP</ion-label>
+               <ion-badge>{{rspCount}}</ion-badge>
+            </ion-tab-button>
+     
+          </ion-tab-bar>
+        </ion-tabs>
+   </ion-toolbar>
+ </ion-footer>

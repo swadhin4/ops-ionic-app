@@ -1,0 +1,104 @@
+<link href="assets/dist/font-awesome-4.4.0/css/font-awesome.min.css"rel="stylesheet">
+<link href="assets/css/materialize.min.css" rel="stylesheet">
+<link href="assets/css/style.css" rel="stylesheet">
+<ion-header>
+  <ion-toolbar color="primary">
+      <ion-buttons slot="start">
+     <ion-back-button></ion-back-button>
+   </ion-buttons>
+   
+     <ion-title class="titleHeader">Service Detail
+        
+            <ion-icon name="create" item-right (click)='editAsset()' ></ion-icon>
+            
+        
+     </ion-title> 
+    
+      
+         
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+     
+      <ion-card>
+     <ion-card-content>
+      <form #form="ngForm" (ngSubmit)="onSubmit(form)">
+           <ion-card-subtitle >Name</ion-card-subtitle>           
+           <ion-item class="activated" > 
+             <ion-icon name="md-list-box" slot="start"></ion-icon>             
+             <ion-input type="text" disabled={{isDisabled}}> Mobile Phone </ion-input>
+           </ion-item>
+           
+         <ion-card-subtitle >Service Code</ion-card-subtitle>   
+             <ion-item href class="activated">
+               <ion-icon name="information-circle" slot="start"></ion-icon>
+               <ion-input type="text" disabled={{isDisabled}}>1234678000</ion-input>
+             </ion-item>
+             <ion-card-subtitle >Category</ion-card-subtitle>       
+             <ion-item class="activated">
+               <ion-icon name="warning" slot="start"></ion-icon>
+               <ion-input type="text" disabled={{isDisabled}}>Samsung</ion-input>
+             </ion-item>
+             <ion-card-subtitle >Component Type</ion-card-subtitle>   
+             <ion-item>
+               <ion-icon name="md-pricetag" slot="start"></ion-icon>
+               <ion-input type="text" disabled={{isDisabled}}>Systeme informatique</ion-input>
+               
+             </ion-item>
+    
+           <ion-card-subtitle >Location</ion-card-subtitle>     
+           <ion-item href class="activated">
+               <ion-icon name="stopwatch" slot="start"></ion-icon>
+               <ion-input type="text" disabled={{isDisabled}}>Autres</ion-input>
+             </ion-item>
+          
+             <ion-card-subtitle >Service Provider</ion-card-subtitle>     
+           <ion-item href class="activated">
+               <ion-icon name="stopwatch" slot="start"></ion-icon>               
+               <ion-input type="text" disabled={{isDisabled}}>Euro Garages UK Ltd</ion-input>
+             </ion-item>
+             <ion-card-subtitle >Service Contract StartDate</ion-card-subtitle>     
+             <ion-item href class="activated">
+                 <ion-icon name="ios-call" slot="start"></ion-icon>
+                 <ion-input type="text" disabled={{isDisabled}}>Shop</ion-input>
+               </ion-item>
+               <ion-card-subtitle >Service Contract EndDate</ion-card-subtitle>     
+               <ion-item href class="activated">
+                   <ion-icon name="ios-mail" slot="start"></ion-icon>
+                   <ion-datetime displayFormat="MM/DD/YYYY">05-08-2018</ion-datetime>
+                 </ion-item>
+                 <ion-card-subtitle >Site</ion-card-subtitle>     
+                 <ion-item href class="activated">
+                     <ion-icon name="ios-mail" slot="start"></ion-icon>
+                     <ion-label>08-05-2020</ion-label>
+                   </ion-item>
+                   <ion-card-subtitle >Site</ion-card-subtitle>     
+                   <ion-item href class="activated">
+                       <ion-icon name="ios-mail" slot="start"></ion-icon>
+                       <ion-input type="text" disabled={{isDisabled}}>Bangalore new site</ion-input>
+                     </ion-item>
+                     <div class="row">
+                      <ion-button  type="submit" [disabled]="form.invalid"
+                        expand="full">Submit</ion-button> 
+                    </div>  
+          </form>
+         </ion-card-content>
+         
+         
+       </ion-card>
+</ion-content>
+<ion-footer>
+  <ion-toolbar>
+     <ion-tabs>
+         <ion-tab-bar slot="bottom">
+       
+           <ion-tab-button (click)="siteTimes(siteID)">
+             <ion-icon name="information-circle"></ion-icon>
+             <ion-label>Asset Task List</ion-label>
+            
+           </ion-tab-button>
+         </ion-tab-bar>
+       </ion-tabs>
+  </ion-toolbar>
+</ion-footer>

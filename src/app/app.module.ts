@@ -11,7 +11,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpModule } from '@angular/http';
 import { IonicStorageModule } from '@ionic/storage';
- 
+import { Device } from '@ionic-native/device/ngx';
+import { Geolocation  } from '@ionic-native/geolocation/ngx';
+import { NativeGeocoder } from '@ionic-native/native-geocoder/ngx';
+import { TooltipsModule } from 'ionic-tooltips';
+
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
@@ -21,12 +25,21 @@ import { IonicStorageModule } from '@ionic/storage';
     AppRoutingModule,
     IonicStorageModule.forRoot(),
     HttpClientModule,
-    HttpModule
+    HttpModule,
+    TooltipsModule.forRoot()
+ 
+
+   
   ],
   providers: [
     StatusBar,
     SplashScreen,
+    Device,
+    Geolocation ,
+    NativeGeocoder,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
+  
+  
   ],
   bootstrap: [AppComponent]
 })

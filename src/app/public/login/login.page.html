@@ -1,6 +1,6 @@
 
 <link href="assets/css/style.css" rel="stylesheet">
-<ion-header> <ion-toolbar> <img
+<ion-header> <br><ion-toolbar> <img
 	src="assets/logo.png" alt="Logo" id="logo" class="center"> <img
 	src="assets/sigma.png" class="center" style="width:65%"> </ion-toolbar> </ion-header>
 
@@ -20,11 +20,11 @@
 							placeholder="Username" ngModel required></ion-input> </ion-item>
 						<ion-item> <ion-input name="password" type="password"
 							placeholder="Password" ngModel required></ion-input> </ion-item>
-						<ion-item> <ion-label>Login Type</ion-label> <ion-select name="type"
+						<!--<ion-item> <ion-label>Login Type</ion-label> <ion-select name="type"
 							placeholder="Select One" ngModel required> <ion-select-option
 							value="CUSTOMER">(R) Customer</ion-select-option> <ion-select-option
 							value="RSP">(R) Service Provider</ion-select-option> <ion-select-option
-							value="ESP">(E) Service Provider</ion-select-option> </ion-select> </ion-item>
+							value="ESP">(E) Service Provider</ion-select-option> </ion-select> </ion-item>-->
 					</div>
 						
 					</ion-col> </ion-row> </ion-grid>
@@ -33,7 +33,10 @@
 					</div>
 					<div class="row">
 						<ion-button size="large" type="submit" [disabled]="form.invalid"
-							expand="block">Login</ion-button>
+							expand="full">Login</ion-button>
+
+							<!--<ion-button size="large" type="button" (click)="presentActionSheet()"
+							expand="full">Show System Info</ion-button>-->	
 					</div>
 
 				</form>

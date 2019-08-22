@@ -1,0 +1,95 @@
+
+<link href="assets/css/bootstrap.min.css" rel="stylesheet">
+<link href="assets/dist/font-awesome-4.4.0/css/font-awesome.min.css"rel="stylesheet">
+<link href="assets/css/AdminLTE.min.css" rel="stylesheet">
+<link href="assets/css/bootstrap-material-design.min.css"	rel="stylesheet">
+<link href="assets/css/MaterialAdminLTE.min.css" rel="stylesheet">
+
+<link href="assets/dist/font-awesome-4.4.0/css/font-awesome.min.css"rel="stylesheet">
+<link href="assets/css/materialize.min.css" rel="stylesheet">
+<link href="assets/css/style.css" rel="stylesheet">
+<style>
+
+</style>
+<ion-header>
+   <ion-toolbar color="primary">
+   		<ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+
+    </ion-buttons>
+    
+      <ion-title class="titleHeader">{{incidentNumber}}</ion-title>
+       <ion-buttons slot="end">
+        
+        </ion-buttons>
+   </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-card>
+      <ion-card-header color="success">
+        <ion-card-subtitle>Ticket details</ion-card-subtitle>
+      </ion-card-header>
+      <ion-card-content>
+          <ion-card-subtitle >Title</ion-card-subtitle>   
+          <ion-item href class="activated">
+              <ion-icon name="information-circle" slot="start"></ion-icon>
+              <ion-label>{{incidentDetail?.ticketTitle}}</ion-label>
+            </ion-item>
+            <ion-card-subtitle >Description</ion-card-subtitle>           
+            <ion-item class="activated">
+              <ion-icon name="md-list-box" slot="start"></ion-icon>
+              <ion-label>{{incidentDetail?.description}}</ion-label>
+            </ion-item>
+   
+          <ion-card-subtitle >Site Information</ion-card-subtitle>   
+              <ion-item href class="activated">
+                <ion-icon name="information-circle" slot="start"></ion-icon>
+                <ion-label>{{incidentDetail?.siteName}}</ion-label>
+              </ion-item>
+              <ion-card-subtitle >Category</ion-card-subtitle>       
+              <ion-item class="activated">
+                <ion-icon name="warning" slot="start"></ion-icon>
+                <ion-label>{{incidentDetail?.categoryName}}</ion-label>
+              </ion-item>
+              <ion-card-subtitle >Status</ion-card-subtitle>   
+              <ion-item>
+                <ion-icon name="md-pricetag" slot="start"></ion-icon>
+                <ion-label>{{incidentDetail?.status}}</ion-label>
+              </ion-item>
+     
+            <ion-card-subtitle >Issue Start Time</ion-card-subtitle>     
+            <ion-item href class="activated">
+                <ion-icon name="stopwatch" slot="start"></ion-icon>
+                <ion-label>{{incidentDetail?.ticketStartTime}}</ion-label>
+              </ion-item>
+              <ion-card-subtitle >SLA</ion-card-subtitle>     
+              <ion-item href class="activated">
+                  <ion-icon name="stopwatch" slot="start"></ion-icon>
+                 <ion-label>{{incidentDetail?.sla}}</ion-label>
+                </ion-item>
+                <ion-card-subtitle >Date created</ion-card-subtitle>     
+                <ion-item href class="activated">
+                    <ion-icon name="stopwatch" slot="start"></ion-icon>
+                  <ion-label>{{incidentDetail?.createdOn}}</ion-label>
+                  </ion-item>
+            
+          </ion-card-content>
+          <ion-fab vertical="top" horizontal="end" slot="fixed">
+              <ion-fab-button>
+                <ion-icon name="more"></ion-icon>
+               
+              </ion-fab-button>
+              <ion-fab-list side="bottom">
+                  <ion-fab-button> <ion-icon name="md-link" tooltip="Linked Tickets" navTooltip></ion-icon></ion-fab-button>
+                  <ion-fab-button> <ion-icon name="md-image" tooltip="Attachments" navTooltip></ion-icon></ion-fab-button>
+                  <ion-fab-button> <ion-icon name="md-calendar" tooltip="History" navTooltip></ion-icon></ion-fab-button>
+                  <ion-fab-button> <ion-icon name="md-chatbubbles" tooltip="Work Notes" navTooltip></ion-icon></ion-fab-button>
+                  <ion-fab-button> <ion-icon name="md-create" tooltip="Edit" navTooltip></ion-icon></ion-fab-button>
+                  <ion-fab-button> <ion-icon name="logo-usd" tooltip="Finance" navTooltip></ion-icon></ion-fab-button>
+                  
+                </ion-fab-list>
+            </ion-fab>
+          
+        </ion-card>
+</ion-content>

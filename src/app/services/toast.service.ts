@@ -42,7 +42,7 @@ export class ToastService {
           showCloseButton: true,
           color:'success',
           closeButtonText: 'X',
-          position: 'middle',
+          position: 'bottom',
         });
         toast.present();
       }
@@ -53,7 +53,7 @@ export class ToastService {
           showCloseButton: true,
           color:'danger',
           closeButtonText: 'X',
-          position: 'middle',
+          position: 'bottom',
         });
         toast.present();
       }

@@ -1,0 +1,118 @@
+<link href="assets/dist/font-awesome-4.4.0/css/font-awesome.min.css"rel="stylesheet">
+<link href="assets/css/materialize.min.css" rel="stylesheet">
+<link href="assets/css/style.css" rel="stylesheet">
+<ion-header>
+  <ion-toolbar color="primary">
+      <ion-buttons slot="start">
+     <ion-back-button></ion-back-button>
+   </ion-buttons>
+   
+     <ion-title class="titleHeader">Equipment Detail
+      <ion-icon name="create" item-right (click)='editAsset()'></ion-icon>
+     </ion-title>      
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+     
+      <ion-card>
+     <ion-card-content>
+      <form #form="ngForm" (ngSubmit)="onSubmit(form)">
+           <ion-card-subtitle >Name</ion-card-subtitle>           
+           <ion-item class="activated" > 
+             <ion-icon name="md-list-box" slot="start"></ion-icon>             
+             <ion-input type="text" disabled={{isDisabled}}>{{assetDetails?.assetName}}</ion-input>            
+           </ion-item>
+           
+         <ion-card-subtitle >Asset Code</ion-card-subtitle>   
+             <ion-item href class="activated">
+               <ion-icon name="information-circle" slot="start"></ion-icon>
+               <ion-input type="text" disabled={{isDisabled}}>{{assetDetails?.assetCode}}</ion-input>
+               
+             </ion-item>
+             <ion-card-subtitle >Model</ion-card-subtitle>       
+             <ion-item class="activated">
+               <ion-icon name="warning" slot="start"></ion-icon>
+               <ion-input type="text" disabled={{isDisabled}}>{{assetDetails?.modelNumber}}</ion-input>
+             </ion-item>
+             <ion-card-subtitle >Category</ion-card-subtitle>   
+             <ion-item>
+               <ion-icon name="md-pricetag" slot="start"></ion-icon>
+               <ion-input type="text" disabled={{isDisabled}}>{{assetDetails?.assetCategoryName}}</ion-input>
+             </ion-item>
+    
+           <ion-card-subtitle >Component Type</ion-card-subtitle>     
+           <ion-item href class="activated">
+               <ion-icon name="stopwatch" slot="start"></ion-icon>
+               <ion-input type="text" disabled={{isDisabled}}>{{assetDetails?.assetSubcategory1}}</ion-input>
+             </ion-item>
+          
+             <ion-card-subtitle >Service Provider</ion-card-subtitle>     
+           <ion-item href class="activated">
+               <ion-icon name="stopwatch" slot="start"></ion-icon>               
+               <ion-input type="text" disabled={{isDisabled}}>{{assetDetails?.serviceProviderName}}</ion-input>
+             </ion-item>
+             <ion-card-subtitle >Location</ion-card-subtitle>     
+             <ion-item href class="activated">
+                 <ion-icon name="ios-call" slot="start"></ion-icon>
+                 <ion-input type="text" disabled={{isDisabled}}>{{assetDetails?.locationName}}</ion-input>
+               </ion-item>
+               <ion-card-subtitle >Date of Commission</ion-card-subtitle>     
+               <ion-item href class="activated">
+                   <ion-icon name="ios-mail" slot="start"></ion-icon>
+                   <ion-label>{{assetDetails?.commisionedDate}}</ion-label>
+                 </ion-item>
+                 <ion-card-subtitle >Date of DeCommission</ion-card-subtitle>     
+                 <ion-item href class="activated">
+                     <ion-icon name="ios-mail" slot="start"></ion-icon>
+                     <ion-label>{{assetDetails?.deCommissionedDate}}</ion-label>
+                   </ion-item>
+                   <ion-card-subtitle >Site</ion-card-subtitle>     
+                   <ion-item href class="activated">
+                       <ion-icon name="ios-mail" slot="start"></ion-icon>
+                       <ion-input type="text" disabled={{isDisabled}}>{{assetDetails?.siteName}}</ion-input>
+                     </ion-item>
+                     <ion-card-subtitle >Content</ion-card-subtitle>     
+                     <ion-item href class="activated">
+                         <ion-icon name="ios-mail" slot="start"></ion-icon>
+                         <ion-input type="text" disabled={{isDisabled}}>Nothinng</ion-input>
+                       </ion-item>
+                       <ion-card-subtitle >Is asset Electrical</ion-card-subtitle>     
+                       <ion-item href class="activated">
+                           <ion-icon name="ios-mail" slot="start"></ion-icon>
+                           <ion-label>{{assetDetails?.isAssetElectrical}}</ion-label>
+                         </ion-item>
+                         <ion-card-subtitle >Is Power sensor attached</ion-card-subtitle>     
+                         <ion-item href class="activated">
+                             <ion-icon name="ios-mail" slot="start"></ion-icon>
+                             <ion-label>{{assetDetails?.isPWSensorAttached}}</ion-label>
+                           </ion-item>
+                           <ion-card-subtitle >Sensor Number</ion-card-subtitle>     
+                           <ion-item href class="activated">
+                               <ion-icon name="ios-mail" slot="start"></ion-icon>
+                               <ion-input type="text" disabled={{isDisabled}}>{{assetDetails?.pwSensorNumber}}</ion-input>
+                             </ion-item>
+                             <div class="row">
+                              <ion-button  type="submit" [disabled]="form.invalid"
+                                expand="full">Submit</ion-button> 
+                            </div>  
+            </form>
+         </ion-card-content>
+         
+         
+       </ion-card>
+</ion-content>
+<ion-footer>
+  <ion-toolbar>
+     <ion-tabs>
+         <ion-tab-bar slot="bottom">
+       
+           <ion-tab-button (click)="getAssetTasks()">
+             <ion-icon name="information-circle"></ion-icon>
+             <ion-label>Asset Task List</ion-label>
+            
+           </ion-tab-button>
+         </ion-tab-bar>
+       </ion-tabs>
+  </ion-toolbar>
+</ion-footer>

@@ -9,7 +9,9 @@
    		<ion-buttons slot="start">
       <ion-back-button></ion-back-button>
     </ion-buttons>
-      <ion-title class="titleHeader">Asset List</ion-title>
+      <ion-title class="titleHeader">Asset List
+         <p style="font-size:10px">{{assetType}}</p>
+      </ion-title>
    </ion-toolbar>
 </ion-header>
 <ion-content >
@@ -19,10 +21,32 @@
                <li class="collection-item avatar" *ngFor="let item of assetList">
                   <img src="assets/img/ticket.png" alt="" class="circle">
                   <p class="font-weight-600">{{item.assetName}}</p>
-                  <p class="medium-small">{{item.categoryName}}</p>
-                  <a href="javacript:void(0);" class="secondary-content"><i class="material-icons pull-right" style="    margin-right: -182px;">info_border</i></a>
+                  <p class="medium-small">{{item.assetCategoryName}}</p>
+                  <a href="javacript:void(0);" class="secondary-content" (click)="openAssetDetail(item.assetId,item.assetType)">
+                     <i class="material-icons pull-right" style="    margin-right: -182px;">info_border</i></a>
                </li>
             </ul>
       </div>
    </div>
 </ion-content>
+<ion-footer>
+   <ion-toolbar>
+      <ion-tabs>
+          <ion-tab-bar slot="bottom">
+        
+            <ion-tab-button (click)="getAssetList('E')">
+              <ion-icon name="information-circle"></ion-icon>
+              <ion-label>Equipments</ion-label>
+             
+            </ion-tab-button>
+             
+        
+            <ion-tab-button (click)="getAssetList('S')">
+              <ion-icon name="information-circle"></ion-icon>
+              <ion-label>Services</ion-label>
+            </ion-tab-button>
+           
+          </ion-tab-bar>
+        </ion-tabs>
+   </ion-toolbar>
+ </ion-footer>

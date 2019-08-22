@@ -20,9 +20,26 @@
                   <img src="assets/img/ticket.png" alt="" class="circle">
                   <p class="font-weight-600">{{item.siteName}}</p>
                   <p class="medium-small"><i class="fa fa-user" aria-hidden="true"></i> {{item.owner}}</p>
-                  <a href="#!" class="secondary-content"><i class="material-icons">star_border</i></a>
+                  <a href="javascript:void(0)" class="secondary-content" (click)="openSiteDetail(item.siteId)" >
+                     <i class="material-icons pull-right" style="    margin-right: -182px;">info_border</i></a>
                </li>
             </ul>
       </div>
    </div>
+   <!--<div class="col s12 m12 l6">
+      <ion-list class="collection mb-0" style="border: 0px solid #e0e0e0;" *ngFor="let item of siteList">
+         <ion-item (click)="openSiteDetail(item.siteId)"> 
+            <img src="assets/img/ticket.png" alt="" class="circle"> -
+            <ion-avatar slot="start">
+                  <img src="assets/img/ticket.png">
+                </ion-avatar>
+                     <p class="font-weight-600">{{item.siteName}}</p>
+                     <p class="medium-small"><i class="fa fa-user" aria-hidden="true"></i> {{item.owner}}</p>
+                     <a href="javascript:void(0)" class="secondary-content" (click)="siteMapPage(item.siteId)">
+                        <i class="material-icons pull-right" style="    margin-right: -182px;">info_border</i></a>
+         </ion-item>
+         
+     </ion-list>
+   </div>-->
 </ion-content>
+

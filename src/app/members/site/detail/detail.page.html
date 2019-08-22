@@ -1,0 +1,147 @@
+
+<link href="assets/dist/font-awesome-4.4.0/css/font-awesome.min.css"rel="stylesheet">
+<link href="assets/css/materialize.min.css" rel="stylesheet">
+<link href="assets/css/style.css" rel="stylesheet">
+<ion-header>
+  <ion-toolbar color="primary">
+      <ion-buttons slot="start">
+     <ion-back-button></ion-back-button>
+   </ion-buttons>
+   
+     <ion-title class="titleHeader">Site Information</ion-title>
+     
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  
+    <div class="list">
+       <div class="item item-avatar" style="    background-image: url(assets/img/site-bk.jpg);
+      height: 100px;">
+          <h3 style="color:white;font-size:1.2em;    padding: 8px;
+          margin-top: 0px;">{{siteDetail?.siteName}}</h3>
+          <h5 style="color:white; font-size:1.2em;    padding: 8px;
+          margin-top: -21px;">{{siteDetail?.fullAddress}}</h5>
+        </div>
+      
+      </div>
+      <ion-card>
+     <ion-card-content>
+         
+           <ion-card-subtitle >Operator</ion-card-subtitle>           
+           <ion-item class="activated" *ngIf="!editable"> 
+             <ion-icon name="md-list-box" slot="start"></ion-icon>
+             <ion-label>{{siteDetail?.siteOwner}}</ion-label>
+            
+           </ion-item>
+           <ion-item class="activated" *ngIf="editable"> 
+              <ion-icon name="md-list-box" slot="start"></ion-icon>
+               <ion-input type="text" [(ngModel)]="siteDetail.siteOwner"  required clearInput></ion-input>
+            </ion-item>
+  
+         <ion-card-subtitle >Owner</ion-card-subtitle>   
+             <ion-item  class="activated" *ngIf="!editable">
+               <ion-icon name="information-circle" slot="start"></ion-icon>
+               <ion-label>{{siteDetail?.siteOwner}}</ion-label>
+             </ion-item>
+             <ion-item class="activated" *ngIf="editable"> 
+              <ion-icon name="md-list-box" slot="start"></ion-icon>
+               <ion-input type="text" [(ngModel)]="siteDetail.siteOwner"  required clearInput></ion-input>
+            </ion-item>
+             <ion-card-subtitle >Electricity Id (MPAN)</ion-card-subtitle>       
+             <ion-item class="activated" *ngIf="!editable">
+               <ion-icon name="warning" slot="start"></ion-icon>
+               <ion-label>{{siteDetail?.electricityId}}</ion-label>
+             </ion-item>
+             <ion-item class="activated" *ngIf="editable"> 
+              <ion-icon name="md-list-box" slot="start"></ion-icon>
+               <ion-input type="text" [(ngModel)]="siteDetail.electricityId"  required clearInput></ion-input>
+            </ion-item>
+             <ion-card-subtitle >Site ID Number 1</ion-card-subtitle>   
+             <ion-item class="activated" *ngIf="!editable"> 
+               <ion-icon name="md-pricetag" slot="start"></ion-icon>
+               <ion-label>{{siteDetail?.siteNumber1}}</ion-label>
+             </ion-item>
+
+             <ion-item class="activated" *ngIf="editable"> 
+              <ion-icon name="md-pricetag" slot="start"></ion-icon>
+              <ion-input type="text" min="10" [(ngModel)]="siteDetail.siteNumber1"  required clearInput></ion-input>
+            </ion-item>
+    
+           <ion-card-subtitle >Site ID Number 2</ion-card-subtitle>     
+           <ion-item  class="activated" *ngIf="!editable">
+               <ion-icon name="stopwatch" slot="start"></ion-icon>
+               <ion-label>{{siteDetail?.siteNumber2}}</ion-label>
+             </ion-item>
+             <ion-item  class="activated" *ngIf="editable">
+              <ion-icon name="stopwatch" slot="start"></ion-icon>
+              <ion-input type="text" min="10" [(ngModel)]="siteDetail.siteNumber2" required clearInput></ion-input>
+            </ion-item>
+          
+             <ion-card-subtitle >Contact Name</ion-card-subtitle>     
+           <ion-item  class="activated" *ngIf="!editable">
+               <ion-icon name="stopwatch" slot="start"></ion-icon>
+               <ion-label>{{siteDetail?.contactName}}</ion-label>
+             </ion-item>
+             <ion-item  class="activated" *ngIf="editable">
+              <ion-icon name="stopwatch" slot="start"></ion-icon>
+              <ion-input type="text"  [(ngModel)]="siteDetail.contactName"  required clearInput></ion-input>
+            </ion-item>
+             <ion-card-subtitle >Contact Number</ion-card-subtitle>     
+             <ion-item  class="activated" *ngIf="!editable">
+                 <ion-icon name="ios-call" slot="start"></ion-icon>
+                 <ion-label>{{siteDetail?.primaryContact}}</ion-label>
+               </ion-item>
+               <ion-item  class="activated" *ngIf="editable">
+                <ion-icon name="ios-call" slot="start"></ion-icon>
+                <ion-input type="text" min="10" [(ngModel)]="siteDetail.primaryContact"  required clearInput></ion-input>
+              </ion-item>
+               <ion-card-subtitle >Email</ion-card-subtitle>     
+               <ion-item  class="activated" *ngIf="!editable">
+                   <ion-icon name="ios-mail" slot="start"></ion-icon>
+                   <ion-label>{{siteDetail?.email}}</ion-label>
+                 </ion-item>
+                 <ion-item  class="activated" *ngIf="editable">
+                  <ion-icon name="ios-mail" slot="start"></ion-icon>
+                  <ion-input type="text" [(ngModel)]="siteDetail.email"  required clearInput></ion-input>
+                </ion-item>
+                <ion-fab vertical="top" horizontal="end" slot="fixed">
+                  <ion-fab-button (click)="editSiteDetail(iconValue)">
+                    <ion-icon name="{{iconValue}}"></ion-icon>
+                    
+                  </ion-fab-button>
+                 
+                </ion-fab>
+         </ion-card-content>
+       
+         
+       </ion-card>
+</ion-content>
+<ion-footer>
+  <ion-toolbar>
+     <ion-tabs>
+         <ion-tab-bar slot="bottom">
+       
+           <ion-tab-button (click)="siteTimes(siteID)">
+             <ion-icon name="information-circle"></ion-icon>
+             <ion-label>Operating Times</ion-label>
+            
+           </ion-tab-button>
+       
+           <ion-tab-button (click)="siteMapPage(siteID)">
+             <ion-icon name="map"></ion-icon>
+             <ion-label>Map</ion-label>
+           </ion-tab-button>
+       
+           <ion-tab-button (click)="siteLicense(siteID)">
+             <ion-icon name="information-circle"></ion-icon>
+             <ion-label>License</ion-label>
+           </ion-tab-button>
+           <ion-tab-button (click)="siteSubmeter(siteID)">
+            <ion-icon name="information-circle"></ion-icon>
+            <ion-label>Submeter</ion-label>
+          </ion-tab-button>
+         </ion-tab-bar>
+       </ion-tabs>
+  </ion-toolbar>
+</ion-footer>
